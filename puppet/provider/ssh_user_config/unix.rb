@@ -49,7 +49,7 @@ Puppet::Type.type(:ssh_user_config).provide(:unix) do
   def exists?
     @hosts ||= []
     parsefile
-    @hosts.select { |x| x['host'] == resource[:host] }.length == 1
+    @hosts.select { |x| x['host'] == resource[:host] }.length > 0
   end
 
   def add
